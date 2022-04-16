@@ -1,5 +1,4 @@
 function doForm(){
-  alert("Pawwww yeah! You succuessfuly submited your info!1");
     var xhr = new XMLHttpRequest();
     var url = 'api.hsforms.com/submissions/v3/integration/submit/3df04ea6-c44b-4622-b223-78713fd26d9d';
     var firstName = document.getElementById('firstName').value;
@@ -34,24 +33,21 @@ function doForm(){
     
      
       xhr.open('POST', url);
-      // Sets the value of the 'Content-Type' HTTP request headers to 'application/json'
+ 
       xhr.setRequestHeader('Content-Type', 'application/json');
   
       xhr.onreadystatechange = function() {
           if(xhr.readyState == 4 && xhr.status == 200) { 
-              alert("Pawwww yeah! You succuessfuly submited your info!2");
+            alert(xhr.responseText);
           } else if (xhr.readyState == 4 && xhr.status == 400){ 
-              alert(xhr.responseText); // Returns a 400 error the submission is rejected.          
+              alert(xhr.responseText); 
           } else if (xhr.readyState == 4 && xhr.status == 403){ 
-              alert(xhr.responseText); // Returns a 403 error if the portal isn't allowed to post submissions.           
+              alert(xhr.responseText); 
           } else if (xhr.readyState == 4 && xhr.status == 404){ 
-              alert(xhr.responseText); //Returns a 404 error if the formGuid isn't found     
+              alert(xhr.responseText); 
           }
          }
-  
-  
-      // Sends the request 
       
       xhr.send(final_data)
-      alert("Pawwww yeah! You succuessfuly submited your info!3");
+      alert("Pawwww yeah! You succuessfuly submited your info!");
    }
