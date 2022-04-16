@@ -1,10 +1,11 @@
 function doForm(){
+  alert("Pawwww yeah! You succuessfuly submited your info!1");
     var xhr = new XMLHttpRequest();
     var url = 'api.hsforms.com/submissions/v3/integration/submit/3df04ea6-c44b-4622-b223-78713fd26d9d';
     var firstName = document.getElementById('firstName').value;
     var lastName = document.getElementById('lastName').value;
     var email = document.getElementById('email').value;
-    
+    var hutk = document.cookie.replace(/(?:(?:^|.*;\s*)hubspotutk\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     
     var data = 
            {"fields": [
@@ -26,7 +27,7 @@ function doForm(){
              
           ],
           "context": {
-            "hutk": ':hutk'}
+            "hutk": hutk}
         };
       var final_data = JSON.stringify(data)
     
@@ -38,7 +39,7 @@ function doForm(){
   
       xhr.onreadystatechange = function() {
           if(xhr.readyState == 4 && xhr.status == 200) { 
-              alert("Pawwww yeah! You succuessfuly submited your info!");
+              alert("Pawwww yeah! You succuessfuly submited your info!2");
           } else if (xhr.readyState == 4 && xhr.status == 400){ 
               alert(xhr.responseText); // Returns a 400 error the submission is rejected.          
           } else if (xhr.readyState == 4 && xhr.status == 403){ 
@@ -52,8 +53,5 @@ function doForm(){
       // Sends the request 
       
       xhr.send(final_data)
-      alert("Pawwww yeah! You succuessfuly submited your info!");
+      alert("Pawwww yeah! You succuessfuly submited your info!3");
    }
-  
-    
-   
