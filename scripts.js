@@ -38,7 +38,7 @@ function doForm(){
   
       xhr.onreadystatechange = function() {
           if(xhr.readyState == 4 && xhr.status == 200) { 
-              alert(xhr.responseText); // Returns a 200 response if the submission is successful.
+              alert("Pawwww yeah! You succuessfuly submited your info!"); // Returns a 200 response if the submission is successful.
           } else if (xhr.readyState == 4 && xhr.status == 400){ 
               alert(xhr.responseText); // Returns a 400 error the submission is rejected.          
           } else if (xhr.readyState == 4 && xhr.status == 403){ 
