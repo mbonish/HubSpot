@@ -36,7 +36,7 @@ function doForm(){
       // Sets the value of the 'Content-Type' HTTP request headers to 'application/json'
       xhr.setRequestHeader('Content-Type', 'application/json');
   
-        xhr.onreadystatechange = function() {
+      xhr.onreadystatechange = function() {
           if(xhr.readyState == 4 && xhr.status == 200) { 
               alert("Pawwww yeah! You succuessfuly submited your info!");
           } else if (xhr.readyState == 4 && xhr.status == 400){ 
@@ -52,4 +52,8 @@ function doForm(){
       // Sends the request 
       
       xhr.send(final_data)
+      alert("Pawwww yeah! You succuessfuly submited your info!");
    }
+  
+    
+   
